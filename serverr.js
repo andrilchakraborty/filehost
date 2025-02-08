@@ -1,14 +1,20 @@
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
-const upload = multer({ dest: 'uploads/' });
+
+
+const upload = multer({
+  dest: path.join('/tmp', 'uploads/')  
+});
 
 app.post('/upload', upload.single('file'), (req, res) => {
     const file = req.file;
     if (file) {
         const fileUrl = `/uploads/${file.filename}`;
+        
         res.json({ success: true, url: fileUrl });
     } else {
         res.json({ success: false, message: 'File upload failed' });
