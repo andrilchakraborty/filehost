@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    
+    <link rel="icon" href="https://www.totalprosports.com/wp-content/uploads/2022/10/Washington_Commanders_logo.svg_.png" type="image/png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            cursor: url(https://r2.guns.lol/b5b0264b-4580-4a48-a9df-0a94c4f55919.cur) 16 16, auto !important;
+            height: 100vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            background-color: #000;
+            transition: background-color 1s ease-in-out;
+        }
+
+        .initial-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .initial-text {
+            font-size: 2.5rem;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        video.background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .typewriter-text {
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 3s steps(30) 1s forwards;
+            text-shadow: 0 0 2px white, 0 0 5px white, 0 0 10px white;
+            color: white;
+            position: relative;
+        }
+
+        /* Sparkle effect for text overlay */
+        .typewriter-text::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(https://assets.guns.lol/sparkle_white.gif) repeat;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes typing {
+            to {
+                width: 100%;
+            }
+        }
+
+        .content-slide-up {
+            animation: slideUp 1s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 3rem;
+            z-index: 1;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Sparkle effect for icons */
+        .social-icon::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(https://assets.guns.lol/sparkle_white.gif) repeat;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+            opacity: 0.8;
+            box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7);
+        }
+
+        audio {
+            margin-top: 2rem;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+
+        /* Cursor Blinking Effect */
+        .cursor {
+            display: inline-block;
+            width: 5px;
+            height: 35px;
+            background-color: white;
+            margin-left: 5px;
+            animation: blink 0.8s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .upload-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #file-input {
+            background-color: #111;
+            border: 1px solid white;
+            padding: 8px 12px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #file-input:hover {
+            background-color: #444;
+        }
+
+        #file-url {
+            color: lightgreen;
+            margin-top: 10px;
+            word-break: break-all;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="initial-screen" id="initial-screen">
+        <div class="initial-text" onclick="enterSite()">Click to Enter</div>
+    </div>
+
+    <video class="background-video" autoplay loop muted>
+        <source src="https://r2.guns.lol/64009de6-be91-4508-844f-f01b2398236d.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="main-content" class="content-slide-up" style="display:none;">
+        <div class="typewriter-text" id="typewriter">dexlys<span class="cursor" id="cursor"></span></div>
+
+        <div class="social-icons">
+            <a href="" target="_blank" style="display:none;">
+                <img class="social-icon" src="https://img.icons8.com/color/48/tiktok.png" alt="TikTok">
+            </a>
+            <a href="https://x.com/unleashedszn" target="_blank">
+                <img class="social-icon" src="https://img.icons8.com/color/48/twitter.png" alt="Twitter">
+            </a>
+            <a href="https://x.com/essentialwarmth" target="_blank">
+                <img class="social-icon" src="https://img.icons8.com/color/48/twitter.png" alt="Twitter">
+            </a>
+            <a href="COMING SOON" target="_blank" style="display:none;">
+                <img class="social-icon" src="https://img.icons8.com/color/48/discord-logo.png" alt="Discord">
+            </a>
+        </div>
+
+        <audio id="background-audio" loop>
+            <source src="https://r2.guns.lol/5a326521-3e1c-4050-bcc5-8f8a3e09ec50.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <input type="file" id="file-input" accept="image/*,video/*" />
+            <p id="file-url"></p>
+        </div>
+    </div>
+
+    <script>
+        document.body.addEventListener('click', function() {
+            const audio = document.getElementById('background-audio');
+            audio.play();
+        });
+
+        function enterSite() {
+            document.getElementById('initial-screen').style.opacity = '0';
+            setTimeout(function() {
+                document.getElementById('initial-screen').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            }, 1000);
+        }
+
+        const fileInput = document.getElementById('file-input');
+        const fileUrl = document.getElementById('file-url');
+
+        fileInput.addEventListener('change', function () {
+            const file = fileInput.files[0];
+
+            if (file && file.size <= 50 * 1024 * 1024) { // 50 MB limit
+                uploadFile(file);
+            } else {
+                fileUrl.textContent = "File too large or unsupported.";
+                fileUrl.style.color = "red";
+            }
+        });
+
+        function uploadFile(file) {
+            const formData = new FormData();
+            formData.append('file', file);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    fileUrl.textContent = `Uploaded File URL: ${data.url}`;
+                    fileUrl.style.color = 'lightgreen';
+                } else {
+                    fileUrl.textContent = 'Upload failed. Please try again.';
+                    fileUrl.style.color = 'red';
+                }
+            })
+            .catch(err => {
+                fileUrl.textContent = 'Error uploading file.';
+                fileUrl.style.color = 'red';
+            });
+        }
+
+        const titleText = "d e x l y";
+        let titleIndex = 0;
+        let typingDirection = 1;
+
+        function updateTitle() {
+            const partBefore = "@";
+            const partAfter = " d e x l y";
+
+            if (typingDirection === 1) {
+                document.title = partBefore + partAfter.substring(0, titleIndex);
+                titleIndex++;
+                if (titleIndex === partAfter.length) {
+                    typingDirection = -1;
+                    setTimeout(function() {
+                        document.title = partBefore + partAfter;
+                    }, 500);
+                }
+            } else {
+                document.title = partBefore + partAfter.substring(0, titleIndex);
+                titleIndex--;
+                if (titleIndex === 0) {
+                    typingDirection = 1;
+                }
+            }
+        }
+
+        setInterval(updateTitle, 200);
+    </script>
+</body>
+</html>
